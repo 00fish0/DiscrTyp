@@ -62,7 +62,7 @@
   box(width: 1.8em) //标题后第一个段落缩进：在前面加1.8字长的box
 }
 
-#let set_style(font: 字体.宋体, size: 字号.小四, author: "11班-唐梓涵", body) = {
+#let set_style(font: 字体.宋体, size: 字号.小四, author: "fatSheep", body) = {
   set raw(block: true) // 代码块独立在行间
   set text(font: 字体.宋体, size: 字号.小四)
 

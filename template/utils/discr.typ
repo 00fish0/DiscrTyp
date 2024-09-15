@@ -45,3 +45,42 @@
     ) <tlt>
   ]
 }
+
+
+#let cir(..nums) = {
+  for num in nums.pos() {
+    str.from-unicode(9311 + num)
+  }
+}
+
+#let proof(..args) = {
+  let new_children = ()
+  let i = 0
+  while i < args.pos().len()/2 {
+    new_children += (cir(i+1), args.pos().at(2*i), args.pos().at(2*i+1),)
+    i = i+1
+  }
+
+  return table(columns: (1fr, 8fr, 20fr),stroke: none,  ..new_children, )
+}
+
+
+
+
+// #set table(stroke: none)
+// #show table: it => {
+//   if table.hline() in it.children {
+//     return it
+//   }
+//   let children = it.children
+//   let new_children = ()
+//   for i in children {
+//     new_children += (i,)
+//     if repr(i).starts-with("header") {
+//       new_children += (table.hline(),)
+//     }
+//   }
+//   let meta = it.fields()
+//   meta.remove("children")
+//   return table(..meta, table.hline(),..new_children,table.hline())
+// }
